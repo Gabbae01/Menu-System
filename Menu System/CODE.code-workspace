@@ -1,0 +1,21 @@
+{
+  "folders": [
+	{
+		"name": "CODE",
+		"path": ".."
+	},
+	{
+		"name": "My Codes (Grade 12)",
+		"path": "C:/Users/lostv/OneDrive/Desktop/My Codes (Grade 12)"
+	}
+],
+  "settings": {
+    "files.associations": {
+      "*.embeddedhtml": "html",
+      "index.C": "cpp"
+    },
+    "liveServer.settings.multiRootWorkspaceName": "CODE",
+    "git.enabled": false,
+    "editor.fontFamily": "Space mono, Consolas, 'Courier New', monospace"
+  }
+}

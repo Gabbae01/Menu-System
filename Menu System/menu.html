@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="index.html">Home</a></li>
+            <li class="nav-item"><a href="menu.html">Menu</a></li>
+            <li class="nav-item"><a href="pricing.html">Pricing</a></li>
+        </ul>        
+    </div>
+    <div class="container">
+        <h2>Our Menu</h2>
+        <div class="products">
+            <button class="product" onclick="addToOrder('Fried Chicken', 300)">
+                <img src="Chicken.jpg" alt="Fried Chicken">
+                <span>Fried Chicken</span>
+                <span>₱300</span>
+            </button>
+            <button class="product" onclick="addToOrder('Burger', 200)">
+                <img src="Burger.jpg" alt="Burger">
+                <span>Burger</span>
+                <span>₱200</span>
+            </button>
+            <button class="product" onclick="addToOrder('Fries', 50)">
+                <img src="Fries.jpeg" alt="Fries">
+                <span>Fries</span>
+                <span>₱50</span>
+            </button>
+            <button class="product" onclick="addToOrder('Pizza', 500)">
+                <img src="Pizza.avif" alt="Pizza">
+                <span>Pizza</span>
+                <span>₱500</span>
+            </button>
+            <button class="product" onclick="addToOrder('Soda', 50)">
+                <img src="Coke.jpg" alt="Soda">
+                <span>Soda</span>
+                <span>₱50</span>
+            </button>
+            <button class="product" onclick="addToOrder('Sandwich', 150)">
+                <img src="Sandwich.avif" alt="Sandwich">
+                <span>Sandwich</span>
+                <span>₱150</span>
+            </button>
+            <button class="product" onclick="addToOrder('Pasta', 250)">
+                <img src="Pasta.jpg" alt="Pasta">
+                <span>Pasta</span>
+                <span>₱250</span>
+            </button>
+        </div>
+
+        <div class="order-container">
+            <h2>Your Order</h2>
+            <textarea id="order-display" readonly></textarea>
+        </div>
+
+<div class="order-bill">
+    <h2>Order Bill</h2>
+    <input type="text" id="order-total" readonly>
+    <button type="button" onclick="placeOrder()">Place Order</button>
+    <button type="button" onclick="resetOrder()">Reset Order</button>
+</div>
+
+    </div>
+    
+</body>
+</html>
