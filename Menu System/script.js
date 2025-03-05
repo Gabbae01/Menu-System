@@ -1,8 +1,10 @@
 let order = [];
 let total = 0;
 
-function addToOrder(item, price) {
-    order.push({ item, price });
+function addToOrder(item, price, quantity = 1) {
+    for (let i = 0; i < quantity; i++) {
+        order.push({ item, price });
+    }
     updateOrderDisplay();
     updateTotal();
 }
@@ -41,10 +43,35 @@ function placeOrder() {
     }
 }
 
-
 // Call showNotification when order is finalized
 document.getElementById('order-total').addEventListener('click', function() {
     if (total > 0) {
         showNotification(total);
     }
 });
+
+// Quantity popup logic
+let selectedItem = null;
+let selectedPrice = 0;
+
+function showQuantityPopup(item, price) {
+    selectedItem = item;
+    selectedPrice = price;
+    document.getElementById('popup-item-name').innerText = `Quantity for ${item}:`;
+    document.getElementById('quantity').value = 1; // Reset quantity to 1
+    document.getElementById('quantityPopup').style.display = 'flex';
+}
+
+function closeQuantityPopup() {
+    document.getElementById('quantityPopup').style.display = 'none';
+    selectedItem = null;
+    selectedPrice = 0;
+}
+
+function addToOrderWithQuantity() {
+    const quantity = parseInt(document.getElementById('quantity').value);
+    if (quantity > 0 && selectedItem !== null) {
+        addToOrder(selectedItem, selectedPrice, quantity);
+        closeQuantityPopup();
+    }
+}

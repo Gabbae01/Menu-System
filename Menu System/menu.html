@@ -18,41 +18,41 @@
     <div class="container">
         <h2>Our Menu</h2>
         <div class="products">
-            <button class="product" onclick="addToOrder('Fried Chicken', 300)">
+            <button class="product" onclick="showQuantityPopup('Fried Chicken', 300)" data-item-name="Fried Chicken">
                 <img src="Chicken.jpg" alt="Fried Chicken">
                 <span>Fried Chicken</span>
                 <span>₱300</span>
             </button>
-            <button class="product" onclick="addToOrder('Burger', 200)">
+            <button class="product" onclick="showQuantityPopup('Burger', 200)" >
                 <img src="Burger.jpg" alt="Burger">
                 <span>Burger</span>
                 <span>₱200</span>
             </button>
-            <button class="product" onclick="addToOrder('Fries', 50)">
+            <button class="product" onclick="showQuantityPopup('Fries', 50)">
                 <img src="Fries.jpeg" alt="Fries">
                 <span>Fries</span>
                 <span>₱50</span>
             </button>
-            <button class="product" onclick="addToOrder('Pizza', 500)">
+            <button class="product" onclick="showQuantityPopup('Pizza', 500)">
                 <img src="Pizza.avif" alt="Pizza">
                 <span>Pizza</span>
                 <span>₱500</span>
             </button>
-            <button class="product" onclick="addToOrder('Soda', 50)">
+            <button class="product" onclick="showQuantityPopup('Soda', 50)">
                 <img src="Coke.jpg" alt="Soda">
                 <span>Soda</span>
                 <span>₱50</span>
             </button>
-            <button class="product" onclick="addToOrder('Sandwich', 150)">
+            <button class="product" onclick="showQuantityPopup('Sandwich', 150)">
                 <img src="Sandwich.avif" alt="Sandwich">
                 <span>Sandwich</span>
                 <span>₱150</span>
             </button>
-            <button class="product" onclick="addToOrder('Pasta', 250)">
+            <button class="product" onclick="showQuantityPopup('Pasta', 250)">
                 <img src="Pasta.jpg" alt="Pasta">
                 <span>Pasta</span>
                 <span>₱250</span>
-            </button>
+            </button>            
         </div>
 
         <div class="order-container">
@@ -65,6 +65,14 @@
     <input type="text" id="order-total" readonly>
     <button type="button" onclick="placeOrder()">Place Order</button>
     <button type="button" onclick="resetOrder()">Reset Order</button>
+</div>
+<div id="quantityPopup" class="popup">
+    <div class="popup-content">
+        <span id="popup-item-name"></span>
+        <input type="number" id="quantity" value="1" min="1">
+        <button onclick="addToOrderWithQuantity()">Add to Order</button>
+        <button onclick="closeQuantityPopup()">Cancel</button>
+    </div>
 </div>
 
     </div>
